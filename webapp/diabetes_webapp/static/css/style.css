@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches');
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
+
+:root {
+    --blue: #00365a;
+    --orange: #eb663a;
+    --white: #e9f1f1;
+    --yellow:#FFC43D;
+    --teal:#1B9AAA;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar{
+    height: 60px;
+    background-color: var(--blue);
+}
+
+body {
+    font-family: 'Staatliches', serif;
+    background-color: var(--blue)
+}
+
+h1{
+    font-size: 90px;
+}
+
+p{
+    font-family:'Poppins', sans-serif;
+    color: var(--white);
+    font-size: 25px;
+}
+
+p[name="subtext"]{
+    color: var(--white);
+    font-size: 18px;
+}
+
+p[name="about"]{
+    color: black;
+    font-size: 60px;
+    font-family: 'Staatliches', serif;
+}
+
+p[name="instructions"]{
+    color: black;
+    font-size: 24px;
+    padding-left: 30px;
+}
+
+input[name="submit"]{
+    height: 80px;
+    width: 180px;
+    font-size:45px;
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+.line{
+    border-right: 1px solid #B29999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.line2{
+    border-right: 1px solid #e9f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input { 
+    text-align: center;
+}
+
+.btn{
+    height: 100px;
+    width: 250px;
+    font-size:35px;
+    text-align: center;
+    background-color: var(--orange);
+    color: var(--white);
+    margin: auto;
+}
+
+#file-input{
+    font-family: 'Staatliches', serif;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+
+}
+
+#xai-2{
+    text-align: center;
+    background-color: var(--white);
+    padding: 40px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+#about-me{
+    background-color: var(--white);
+    padding: 30px;
+    text-align: center;
+    justify-content: center;
+    /*border-radius: 25px;*/
+}
+
+#model-result{
+    background-color: var(--yellow);
+    text-align:center;
+    padding: 40px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#xai-description{
+    background-color:var(--teal);
+    text-align:center;
+    padding: 40px;
+    justify-content: center;
+}

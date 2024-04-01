@@ -1,0 +1,133 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<title>
+  HOME
+</title>
+
+<body>
+  <div class="jumbotron text-center">
+    <h1 class="jumbotron-heading">DIABETES PREDICTION</h1>
+    <p class="lead text-muted">Predict your risk of diabetes now</p>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="flex-container" id="about-me">
+    <div class="row">
+      <div class="col-sm line">
+        <p name="about">HOW TO USE</p>
+      </div>
+
+      <div class="col-sm">
+        <p name="instructions" class="text-muted">
+          Diabetes is a common disease spread throughout the Philippines and the entire world,
+          and risk prediction of diabetes has been an 
+          emerging problem among patients.
+          This web application aims to predict the risk 
+          of getting diabetes given a set of features or inputs through 
+          a machine learning algorithm.
+          <br>
+          Users need to input information in order for 
+          the web application to predict their risk of 
+          getting diabetes.
+          ALL inputs need to be numbers, 
+          as the form will not accept words as inputs.
+          ALL inputs need to be integer except for your input 
+          for Body Temperature, which accepts decimal numbers.
+          Once the user fills up all the inputs correctly, 
+          press the PREDICT button and let the application run.
+          <br>
+          Alternatively, users can opt to upload 
+          a comma-separated values (CSV) file that contains all of 
+          the required features instead of manually inputting them.
+          The CSV file must only contain one line of values.
+        </p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="flex-container">
+    <form name = "myForm" method="POST" style = "text-align:center" 
+    action="{% url 'predict' %}" onsubmit="return required()" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-sm">
+          <p>Age:</p>
+          <p name="subtext">(Enter an integer from 1 to 100)</p>
+          <input type="number" name="age">
+        </div>
+        <div class="col-sm">
+          <p>Blood Glucose Level (BGL):</p>
+          <p name="subtext">(Enter an integer from 50 to 260)</p>
+          <input type="number" name="glucose_level">
+        </div>
+        <div class="col-sm">
+          <p>Diastolic Blood Pressure:</p>
+          <p name="subtext">(Enter an integer from 60 to 120)</p>
+          <input type="number" name="diastolic_bp">
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <div class="row">
+        <div class="col-sm">
+          <p>Systolic Blood Pressure:</p>
+          <p name="subtext">(Enter an integer from 100 to 150)</p>
+          <input type="number" name="systolic_bp">
+        </div>
+        <div class="col-sm">
+          <p>Heart Rate:</p>
+          <p name="subtext">(Enter an integer from 60 to 120)</p>
+          <input type="number" name="heart_rate">
+        </div>
+        <div class="col-sm">
+          <p>Body Temperature (in Celsius):</p>
+          <p name="subtext">(Enter a number from 35 to 40)</p>
+          <input type="number" name="body_temp" step="any">
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <div class="row">
+        <div class="col-sm">
+          <p>SPO2 Level:</p>
+          <p name="subtext">(Enter an integer from 90 to 100)</p>
+          <input type="number" name="SPO2">
+        </div>
+        <div class="col-sm">
+          <p>Do you experience excessive sweating?</p>
+          <p name="subtext">(Enter 0 for Yes, Enter 1 for No)</p>
+          <input type="number" name="sweating">
+        </div>
+        <div class="col-sm">
+          <p>Do you experience excessive shivering or trembling?</p>
+          <p name="subtext">(Enter 0 for Yes, Enter 1 for No)</p>
+          <input type="number" name="shivering">
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <div class="row">
+        <div id="file-input">
+          <p>You may opt to input a CSV file instead here: </p>
+          <input type="file" accept=".csv" name="csv_file" id="csv_file" class="form-control">
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <input type="submit" value='predict' name="submit">
+    </form>
+  </div>
+  <br>
+  <br>
+  <br>
+</body>
+
+{% endblock content %}

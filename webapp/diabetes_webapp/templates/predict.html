@@ -1,0 +1,155 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<title>
+    PREDICTION
+</title>
+
+<body>
+    <div class="jumbotron text-center">
+        <h1 class="jumbotron-heading">DIABETES PREDICTION RESULTS</h1>
+        <p class="lead text-muted" style="font-size:35px">Results are shown below</p>
+    </div>
+
+    <div class="flex-container" id="model-result">
+        <div class="row">
+            <div class="col-sm line2">
+                <div class="row">
+                    <p style="color:black">You are: 
+                        {% if model_prediction == 0%} AT RISK OF DIABETES 
+                        {% elif model_prediction == 1 %} NOT AT RISK OF DIABETES 
+                        {% else %} 
+                        {% endif %}
+                    </p>
+                </div>  
+            </div>
+
+            <div class="col-sm" style="padding-left: 30px;">
+                <p style="color:black">
+                    {% if model_prediction == 0 %}
+                    Based on the machine learning model, you are at 
+                    a great risk of getting diabetes.
+                    Complications of diabetes can be very severe, 
+                    and if left untreated, can be life-threatening.
+                    It is advised to have a change in diet 
+                    and to include regular exercise in your lifestyle.
+                    The general practice is to eat healthy food 
+                    and avoid fatty and oily food, paired with
+                    increased intake of fruits, vegetables, 
+                    proteins, and whole grains.
+                    Consult your physician for further evaluations 
+                    and an accurate diagnosis.
+                    {% elif model_prediction == 1 %} 
+                    Based on the machine learning model, 
+                    you are not at risk of diabetes.
+                    Continue to live a healthy lifestyle 
+                    by eating healthy food and exercising regularly.
+                    Make sure to also monitor your blood glucose levels regularly.
+                    Do note that these results are still 
+                    subject to a physician's assessment/diagnosis.
+                    {% else %} 
+                    {% endif %}
+                    Showed below are the graphs to show 
+                    how the model came up with its prediction decision.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex-container" style="background-color:#e9f1f1; padding:20px">
+        {% autoescape off %}
+        {{result}}
+        {% endautoescape %}
+    </div>
+
+    <div class="flex-container" id="xai-description">
+        <div class="row">
+            <div class="col-sm line2">
+                <p style="color:black; font-size: 22px;">
+                    The first graph on the left shows 
+                    the confidence interval of the probabilities
+                    of predicting whether you are at risk of diabetes or not. 
+                    Displayed are the model's computed 
+                    probabilities of you being at risk to diabetes or not.
+                    The blue bar indicates the probability 
+                    you are at risk of diabetes, while the orange bar indicates
+                    the probability you are not at risk of diabetes.
+                </p>
+            </div>
+
+            <div class="col-sm line2">
+                <div class="row">
+                    <p style="color:black; font-size: 21px; padding: 20px;">
+                    The second graph on the middle shows the 
+                    feature importance scores of the features based on the inputs.
+                    Each characteristic is given an numerical index 
+                    to represent how greatly it affected the model's decision to 
+                    predict whether you are at risk of diabetes or not. 
+                    The higher the index, the larger effect this feature has
+                    on the model's decision.
+                    </p>
+                    <p style="color:black; font-size: 21px; padding: 20px;">
+                    A blue bar indicates that this characteristic 
+                    contributed to your increased risk of getting diabetes,
+                    while an orange bar indicated that this 
+                    characteristic contributed to your risk of not getting diabetes.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-sm" style="display:flex; justify-content: center; align-items: center;">
+                <p style="color:black; font-size: 22px;">
+                The third graph on the right shows 
+                the top features that contributed to the model's 
+                prediction decision.
+                Accompanied with these features are their values, 
+                which are the values inputted earlier in our home page. 
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex-container" id="xai-2">
+        <div class="row">
+            <div class="col-sm">
+                <img src="data:image/jpg;base64,{{final_image}}">
+            </div>
+
+            <div class="col-sm">
+                <p style="color:black">
+                This bar plot is another way of showing the 
+                local interpretability results of the inputs.
+                The y-axis shows the characteristic and 
+                explains what values of these characteristic influenced
+                the model to predict your risk of diabetes. 
+                The x-axis shows the magnitude of these feature importance scores.
+                </p>
+                <p style="color:black">
+                A red bar indicates that this feature 
+                contributed to the model's prediction of you getting diabetes.
+                </p>
+                <p style="color:black">
+                A green bar indicates that this feature 
+                contributed to the model's prediciton of you NOT getting diabetes.
+                </p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <p style="color: #e9f1f1; font-size:18px; text-align: center;">
+        DISCLAIMER: These results are to be taken as a GUIDE. 
+        Further consultation with a physician is 
+        advised  for a more accurate diagnosis.
+    </p>
+    <br>
+    <br>
+    <br>
+    <div style="text-align: center">
+        <a href="{% url 'index' %}"><button class="btn">Return to Home</button></a>
+    </div>
+    <br>
+    <br>
+    <br>
+</body>
+
+{% endblock content %}
