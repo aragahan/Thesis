@@ -9,4 +9,4 @@ Title: A Machine Learning Based Web Application Focused on Predicting the Risk o
 - XAI libraries used are SHAP and LIME
 
 ##
-<img src="https://github.com/aragahan/thesis/home1.png">
+<img src="https://github.com/aragahan/thesis/blob/main/home1.png">
