@@ -15,3 +15,11 @@ Title: A Machine Learning Based Web Application Focused on Predicting the Risk o
 <img src="https://github.com/aragahan/thesis/blob/main/home2.png">
 <img src="https://github.com/aragahan/thesis/blob/main/home3.png">
 <img src="https://github.com/aragahan/thesis/blob/main/home4.png">
+
+##
+## Sample Prediction Page
+<img src="https://github.com/aragahan/thesis/blob/main/predict1.png">
+<img src="https://github.com/aragahan/thesis/blob/main/predict2.png">
+<img src="https://github.com/aragahan/thesis/blob/main/predict3.png">
+<img src="https://github.com/aragahan/thesis/blob/main/predict4.png">
+<img src="https://github.com/aragahan/thesis/blob/main/predict5.png">
