@@ -24,7 +24,8 @@ Title: A Machine Learning Based Web Application Focused on Predicting the Risk o
 ##
 ## Sample Prediction Page
 - Users are directed here once they click the "PREDICT" button
-- Users are 
+- Health advice is provided, such as consulting a physician and modifying one's diet
+- Results are accompanied with XAI bar graphs and feature importance scores to help explain why the ML model came up with its prediction
 ##
 <img src="https://github.com/aragahan/thesis/blob/main/predict1.png">
 <img src="https://github.com/aragahan/thesis/blob/main/predict2.png">
