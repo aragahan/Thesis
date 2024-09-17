@@ -11,7 +11,9 @@ Title: A Machine Learning Based Web Application Focused on Predicting the Risk o
 
 ##
 ## Homepage
-- test info
+- Contains the title and description of the application as well as the instructions on how to use the app
+- Users are required to input different vital signs and body features
+- Users also have the option to upload a CSV file instead of manually entering inputs
 ##
 <img src="https://github.com/aragahan/thesis/blob/main/home1.png">
 <img src="https://github.com/aragahan/thesis/blob/main/home2.png">
@@ -20,6 +22,8 @@ Title: A Machine Learning Based Web Application Focused on Predicting the Risk o
 
 ##
 ## Sample Prediction Page
+- test info
+##
 <img src="https://github.com/aragahan/thesis/blob/main/predict1.png">
 <img src="https://github.com/aragahan/thesis/blob/main/predict2.png">
 <img src="https://github.com/aragahan/thesis/blob/main/predict3.png">
