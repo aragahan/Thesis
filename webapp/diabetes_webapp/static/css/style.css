@@ -15,12 +15,12 @@ html {
 
 .navbar{
     height: 60px;
-    background-color: var(--blue);
+    background-color: #00365a;
 }
 
 body {
     font-family: 'Staatliches', serif;
-    background-color: var(--blue)
+    background-color: #00365a;
 }
 
 h1{

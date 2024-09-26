@@ -130,6 +130,5 @@ function required()
         
       }
       
-      
       return true;
     }
